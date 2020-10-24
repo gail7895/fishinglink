@@ -29,15 +29,22 @@
                 <div class="collapse navbar-collapse" id="bs-navi">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="{{ route('top') }}">トップページ</a></li>
-                        {{-- ログインしていない場合ログインリンク表示する --}}
+                        
+                        {{-- ミドルウェアでログインページに飛ばす --}}
                         <li class="nav-item"><a class="nav-link" href="#">借りる</a></li>
-                        {{-- ログインしていない場合ログインリンク表示させる --}}
                         <li class="nav-item"><a class="nav-link" href="#">貸す</a></li>
+                        {{-- ここまで　--}}
+                        
                         <li class="nav-item"><a class="nav-link" href="#">新規登録</a></li>
-                        {-- ログインしていない場合ログインリンク表示 --}}
-                        @guest
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
-                        @endguest
+                    
+                        @if(Auth::check())
+                          <li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>
+                       <form id="logout-from" action="{{ route('logout') }}"method="POST">
+                            @csrf
+                        </form>                       
+                        @else
+                          <a class="my-navbar-item" href="{{ route('login') }}">ログイン</a>
+                        @endif
                         <li class="nav-item"><a class="nav-link" href="#">お問い合わせ</a></li>
                         </ul>
                 </div>
