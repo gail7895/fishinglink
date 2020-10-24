@@ -15,19 +15,26 @@
                            enctype="multipart/form-data">
                            
                            <div class="form-group row">
-                           <label class="col-md-3">道具の種類</label>
-                            <div class="col-md-9">
+                           <label class="col-md-2">画像</label>
+                           
+                           
+                           
+                           <div class="form-group row">
+                           <label class="col-md-5">道具の種類</label>
                               @foreach($type_Tools as $type_Tool)
-                              <option>{{$type_Tool}}</option>
+                              <select name="items">
+                              <option value='$type_Tool'>{{$type_Tool}}</option>
                               @endforeach
                             </div>
                             
-                     <div class="form-condition">
-                         <label for="condition">商品の状態</label>
+                     <div class="form-group row">
+                         <label class="col-md-5">商品の状態</label>
                          @foreach($conditions as $condition)
-                         <option>{{$type-Tool}}</option>
+                         <select name="conditon">
+                         <option value='$condtion'>{{$condition}}</option>
                      </div>
                      
+                     <
                      </form>
                     </div>
                    </div>

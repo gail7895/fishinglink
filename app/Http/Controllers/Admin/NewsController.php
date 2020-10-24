@@ -9,8 +9,8 @@ class NewsController extends Controller
 {
     public function add()
     {
-        $type_Tools = array('選択してください','ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
-        $conditions= array('選択してください','非常に良い','良い','普通','悪い','非常に悪い');
+        $type_Tools = array('ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
+        $conditions= array('非常に良い','良い','普通','悪い','非常に悪い');
         
         
         return view('admin.news.create');
