@@ -38,6 +38,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">新規登録</a></li>
                     
                         @if(Auth::check())
+                          <span class="my-navbar-item">ようこそ, {{ Auth::user()->name }}さん
                           <li class="nav-item"><a class="nav-link" href="#">ログアウト</a></li>
                        <form id="logout-from" action="{{ route('logout') }}"method="POST">
                             @csrf
