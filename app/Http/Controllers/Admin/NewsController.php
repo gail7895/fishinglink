@@ -13,6 +13,7 @@ class NewsController extends Controller
         $conditions= array('非常に良い','良い','普通','悪い','非常に悪い');
         
         
+        
         return view('admin.news.create');
     }
     
