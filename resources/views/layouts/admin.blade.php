@@ -28,14 +28,14 @@
                 
                 <div class="collapse navbar-collapse" id="bs-navi">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('top') }}">トップページ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('/') }}">トップページ</a></li>
                         
                         {{-- ミドルウェアでログインページに飛ばす --}}
                         <li class="nav-item"><a class="nav-link" href="#">借りる</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">貸す</a></li>
                         {{-- ここまで　--}}
                         
-                        <li class="nav-item"><a class="nav-link" href="#">新規登録</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">新規登録</a></li>
                     
                         @if(Auth::check())
                           <span class="my-navbar-item">ようこそ, {{ Auth::user()->name }}さん
@@ -44,7 +44,7 @@
                             @csrf
                         </form>                       
                         @else
-                          <a class="my-navbar-item" href="{{ route('login') }}">ログイン</a>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
                         @endif
                         <li class="nav-item"><a class="nav-link" href="#">お問い合わせ</a></li>
                         </ul>
