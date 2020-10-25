@@ -44,7 +44,7 @@
                             @csrf
                         </form>                       
                         @else
-                          <li class="nav-item"><a class="nav-link" href="{{ route('/') }}">ログイン</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
                         @endif
                         <li class="nav-item"><a class="nav-link" href="#">お問い合わせ</a></li>
                         </ul>

@@ -10,8 +10,8 @@ class News extends Model
     
     public static $rules = array(
         'rental_Listing' => 'required',
-        'body' => 'required',
         'items' => 'required',
         'conditon' => 'required',
+        'body' => 'required',
         );
 }

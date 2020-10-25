@@ -11,8 +11,16 @@
                    <h2>貸し出す</h2>
                    <div class="containr">
                        <div class="row">
-                           <form action="{{action('Admin\NewsController@create') }} method="post"
+                           <form action="{{action('Admin\NewsController@create') }} method= "post"
                            enctype="multipart/form-data">
+                           
+                           @if (count($errors) > 0)
+                             <ul>
+                               @foreach($errors->all() as $e)
+                                  <li>{{ $e }}</li>
+                               @endforeach
+                             </ul>
+                           @endif
                            
                       <div class="form-group row">
                         <label class="col-md-3">貸出品</label>

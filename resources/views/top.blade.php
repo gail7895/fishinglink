@@ -18,8 +18,10 @@
                      <p class='mt-5'>■ ■ ■ テストログイン ■ ■ ■</p>
                      <p>Email : test@test.com</p>
                      <p>Password : password</p>
+                     @guest
                      <a class="btn" href="{{ route('login') }}" role="button"></a>
                      <button class="btn-lg btn-info" type="submit">ログイン</button>
+                     @endguest
                   </div>
   
                 
