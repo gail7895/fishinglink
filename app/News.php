@@ -11,7 +11,7 @@ class News extends Model
     public static $rules = array(
         'rental_Listing' => 'required',
         'items' => 'required',
-        'conditon' => 'required',
+        'condition' => 'required',
         'body' => 'required',
         );
 }

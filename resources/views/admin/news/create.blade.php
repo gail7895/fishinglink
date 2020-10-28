@@ -24,38 +24,39 @@
                            
                       <div class="form-group row">
                         <label class="col-md-3">貸出品</label>
-                             <div class="form-control" name="rental_Listing" value="{{ old('rental_Listing') }}"
+                             <input class="form-control" name="rental_Listing" value="{{ old('rental_Listing') }}"
                           </div>
                       </div>  
                       
                       <div class="form-group row">
                          <label class="col-md-2">画像</label>
+                           <div class="col-md-10">
                            <input type="file" class="form-control-file" name="image">
-                      <div class="col-md-10">
-                           <input type="file" class="form-control-file" name="image">
-                           {{ csrf_filed() }}
-                           <input type="submit" class="btn btn-primary" value="アップロード">
-                         </div>
-                      </div>   
+                          </div>
+                      </div>
+                      {{ csrf_filed() }} 
+                      <input type="submit" class="btn btn-primary" value="アップロード”>
                            
                      <div class="form-group row">
                            <label class="col-md-5">道具の種類</label>
                               @foreach($type_Tools as $type_Tool)
-                              <select name="items">
-                              <option value='$type_Tool'>{{$type_Tool}}</option>
+                                <select name="items">
+                                   <option value='$type_Tool'>{{$type_Tool}}</option>
                               @endforeach
                      </div>
                             
                      <div class="form-group row">
                          <label class="col-md-5">商品の状態</label>
-                         @foreach($conditions as $condition)
-                         <select name="conditon">
-                         <option value='$condtion'>{{$condition}}</option>
+                          　<select name="conditon">
+                          　   @foreach($conditions as $condition)
+                          　    <option value='$cnodition'>{{$condition}}</option>
+                          　  @endforeach
+                            </select>
                      </div>
                      
                      <div class="form-group row">
                          <label class="col-md-2">説明</label>
-                         <div class="col-md-10">
+                           <div class="col-md-10">
                            <textarea class="form-contorl" name="body">{{ old('body') }}
                            </textarea>
                          </div>
