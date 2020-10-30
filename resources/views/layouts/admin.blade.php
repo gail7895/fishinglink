@@ -33,7 +33,7 @@
                         {{-- ミドルウェアでログインページに飛ばす --}}
                         <li class="nav-item"><a class="nav-link" href="#">借りる</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ action('Admin\NewsController@create') }}">貸す</a></li>
-                        {{-- ここまで　--}}
+                        {{-- ここまで --}}
                         
                         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">新規登録</a></li>
                     
@@ -42,7 +42,7 @@
                           <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">ログアウト</a></li>
                        <form id="logout-from" action="{{ route('logout') }}"method="POST">
                             @csrf
-                        </form>                       
+                        </form> 
                         @else
                           <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
                         @endif

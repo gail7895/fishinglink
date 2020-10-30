@@ -34,24 +34,23 @@
                            <input type="file" class="form-control-file" name="image">
                           </div>
                       </div>
-                      {{ csrf_filed() }} 
+                      {{ csrf_field() }} 
                       <input type="submit" class="btn btn-primary" value="アップロード”>
                            
                      <div class="form-group row">
                            <label class="col-md-5">道具の種類</label>
+                             <select name="type_Tools"></select>
                               @foreach($type_Tools as $type_Tool)
-                                <select name="items">
-                                   <option value='$type_Tool'>{{$type_Tool}}</option>
+                                   <option value="items">{{$type_Tool}}</option>
                               @endforeach
                      </div>
                             
                      <div class="form-group row">
                          <label class="col-md-5">商品の状態</label>
-                          　<select name="conditon">
+                          　<select name="product_condition"></select>
                           　   @foreach($conditions as $condition)
-                          　    <option value='$cnodition'>{{$condition}}</option>
-                          　  @endforeach
-                            </select>
+                                <option value="condition">{{$condition}}</option>
+                              @endforeach
                      </div>
                      
                      <div class="form-group row">

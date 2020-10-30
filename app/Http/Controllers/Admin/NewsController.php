@@ -12,7 +12,7 @@ class NewsController extends Controller
         $type_Tools = array('ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
         $conditions= array('非常に良い','良い','普通','悪い','非常に悪い');
         
-        return view('admin.news.create');
+        return view('admin.news.create'.compact(var_dump(implode($type_Tools,$conditions))));
     }
     
     public function create(Request $request)
@@ -38,7 +38,10 @@ class NewsController extends Controller
     }
     
     public function index(Request $request)
-    {
+    {   
+        $type_Tools = array('ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
+        $conditions= array('非常に良い','良い','普通','悪い','非常に悪い');
+        
         $query = News::query();
         //検索時に入力した項目を取得する
         $search1 = $request->input('rental_Listing');
@@ -70,9 +73,11 @@ class NewsController extends Controller
         return view('news/index.search',[
             'data' => $data
             ]);
+            
+            return view('admin.news.index').compact('type_Tools','conditions');
       }   
       
-      
+       
     public function edit()
     {
         return view('admin.profile.edit');
