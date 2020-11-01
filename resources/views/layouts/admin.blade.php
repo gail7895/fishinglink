@@ -39,6 +39,7 @@
                         @endguest
                         
                         @if(Auth::check())
+                          <li class="nav-item"><a class="nav-link" href="{{ action('Admin\NewsController@index') }}">貸出品一覧</a></li>
                           <span class="my-navbar-item"></span>
                           <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"
                           onclick="event.preventDefault(); 
@@ -48,7 +49,6 @@
                         </form> 
                         @else
                           <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ action('Admin\NewsController@index') }}">貸出品一覧</a></li>
                         @endif
                         <li class="nav-item"><a class="nav-link" href="#">お問い合わせ</a></li>
                         </ul>

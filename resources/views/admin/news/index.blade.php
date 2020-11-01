@@ -7,7 +7,7 @@
            <div class="text-center col-md-5">
               <h2>貸出品を検索</h2>
            </div>
-           { Form::open(['route' => 'search', 'method' => 'get']) }
+              <form action="{{ action('Admin\NewsController@index') }}" method="get">
                  <div class="form-group">
                      <label for="貸出品">貸出品</label>
                      {{ Form::label('text', '貸出品名') }}
@@ -49,21 +49,33 @@
                     
                     @foreach($data as $item)
                      <div class="row text-center">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                            //投稿された画面へ遷移
                            <a href="">{{ $item->text }}</a>
                         </div>
                         
                         <div class="row text-center">
-                           <div class0="col-md-4">
+                           <div class0="col-md-3">
                               {{ $item->items }}
                            </div>
-                           <div class="col-md-4">
+                        
+                        <div class="row text-center">
+                           <div class="col-md-3">
                               {{ $item->condition }}
                            </div>
+                         </div>
+                        
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                {{ $item->body }}
+                            </div>
+                        </div> 
+                         
                         </div>
                     @endforeach
                      </div>
                   @endif
+               </form>
            </div>
        </div>
    </div>

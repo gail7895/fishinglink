@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\News;
 
 class NewsController extends Controller
 {
@@ -39,8 +40,8 @@ class NewsController extends Controller
     
     public function index(Request $request)
     {   
-        $type_Tools = array('ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
-        $conditions= array('非常に良い','良い','普通','悪い','非常に悪い');
+        $type_Tools = array('選択してください','ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
+        $conditions= array('選択してください','非常に良い','良い','普通','悪い','非常に悪い');
         
         $query = News::query();
         //検索時に入力した項目を取得する
@@ -63,18 +64,17 @@ class NewsController extends Controller
             $query->where('condition', $serach3)->get();
         }
         
-        if ($request->has('condition') && $serach4 != '') {
-            $query->where('condition', $serach4)->get();
+        if ($request->has('body') && $search4 != '') {
+            $query->where('body', $search4)->get();
         }
-        
+       
         //貸出品を1ページにつき10件ずつ表示
         $data = $query->paginate(10);
         
-        return view('news/index.search',[
+        return view('news/index',[
             'data' => $data
             ]);
             
-            return view('admin.news.index',['type_Tools' => $type_Tools,'conditions' => $conditions]);
       }   
       
        

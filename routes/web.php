@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::post('news/create','Admin\NewsController@create');
     Route::get('news/delete','Admin\NewsController@edit');
     Route::get('news/update','Admin\NewsController@update');
-    Route::get('news','Admin\NewsController@index')->name('search');
+    Route::get('news','Admin\NewsController@index');
     
     
 });

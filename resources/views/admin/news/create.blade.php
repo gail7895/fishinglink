@@ -11,7 +11,7 @@
                    <h2>貸し出す</h2>
                    <div class="containr">
                        <div class="row">
-                           <form action="{{action('Admin\NewsController@create') }} method= "post"
+                           <form action="{{action('Admin\NewsController@create') }}" method= "post">
                            enctype="multipart/form-data">
                            
                            @if (count($errors) > 0)
@@ -34,8 +34,6 @@
                            <input type="file" class="form-control-file" name="image">
                           </div>
                       </div>
-                      {{ csrf_field() }} 
-                      <input type="submit" class="btn btn-primary" value="アップロード">
                            
                      <div class="form-group row">
                           {{ Form::label('type_Tools', '貸出品の種類' ) }}
@@ -43,8 +41,8 @@
                      </div>
                             
                      <div class="form-group row">
-                          {{ Form::label('conditions', '商品の状態') }}
-                          {{ Form::select('conditions',  $conditions ) }}
+                          {{ Form::label('condition', '商品の状態') }}
+                          {{ Form::select('condition',  $conditions ) }}
                      </div>
                      
                      <div class="form-group row">
@@ -60,6 +58,9 @@
                            </textarea>
                      </div>
                     </div>
+                    
+                    @csrf
+                    <input type="submit" class="btn btn-primary" value="本当に貸し出しますか？">
                      
                      
                      </form>
