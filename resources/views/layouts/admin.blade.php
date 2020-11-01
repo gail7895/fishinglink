@@ -34,13 +34,16 @@
                         <li class="nav-item"><a class="nav-link" href="#">借りる</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ action('Admin\NewsController@create') }}">貸す</a></li>
                         {{-- ここまで --}}
-                        
+                        @guest
                         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">新規登録</a></li>
-                    
+                        @endguest
+                        
                         @if(Auth::check())
                           <span class="my-navbar-item"></span>
-                          <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">ログアウト</a></li>
-                       <form id="logout-from" action="{{ route('logout') }}"method="POST">
+                          <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"
+                          onclick="event.preventDefault(); 
+                          document.getElementById('logout-form').submit();">ログアウト</a></li>
+                       <form id="logout-form" action="{{ route('logout') }}"method="POST">
                             @csrf
                         </form> 
                         @else

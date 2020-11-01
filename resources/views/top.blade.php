@@ -14,15 +14,15 @@
                      <p class='mt-5'>■ ■ ■このWEBサイトについて ■ ■ ■</p>
                      <p>あの魚を釣って見たい！けど道具を買うのはもったいない...</p>
                      <p>道具を保管したり処分したりするのがめんどくさい...</p>
-     　　　             <p class="mb-5">Fishing Linkでは、貸したい人と借りたい人をつなげます！</p>
+                     <p class="mb-5">Fishing Linkでは、貸したい人と借りたい人を繋げます！</p>
+                     @guest
                      <p class='mt-5'>■ ■ ■ テストログイン ■ ■ ■</p>
                      <p>Email : test@test.com</p>
                      <p>Password : password</p>
-                     @if (Auth::guest()) 
                       <form>
                         <a class="btn-lg btn-info" href="/login">ログイン</a>
                       </form>
-                     @endif
+                     @endguest
                   </div>
               </div>
            </div>
