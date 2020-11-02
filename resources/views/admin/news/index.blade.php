@@ -21,6 +21,7 @@
                      {{ Form::label('condition', '貸出品の状態') }}
                      {{ Form::select('condition',$condition ) }}
                  </div>
+                 <div>
                      {{ Form::submit('検索', ['class' => 'btn btn-primary']) }}
                      {{ Form::close() }}
                  </div>
@@ -54,7 +55,7 @@
                         </div>
                         
                         <div class="row text-center">
-                           <div class0="col-md-3">
+                           <div class="col-md-3">
                               {{ $item->items }}
                            </div>
                         
@@ -70,7 +71,7 @@
                             </div>
                         </div> 
                          
-                        </div>
+                    </div>
                     @endforeach
                      </div>
                   @endif
