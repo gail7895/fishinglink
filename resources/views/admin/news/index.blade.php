@@ -47,27 +47,27 @@
                        </div>
                     </div>
                     
-                    @foreach($data as $item)
+                    @foreach($data as $news)
                      <div class="row text-center">
                         <div class="col-md-3">
                             //投稿された画面へ遷移
-                           <a href="">{{ $item->text }}</a>
+                           <a href="">{{ $serach1->text }}</a>
                         </div>
                         
                         <div class="row text-center">
                            <div class="col-md-3">
-                              {{ $item->items }}
+                              {{ $serach2->items }}
                            </div>
                         
                         <div class="row text-center">
                            <div class="col-md-3">
-                              {{ $item->condition }}
+                              {{ $search3->condition }}
                            </div>
                          </div>
                         
                         <div class="row text-center">
                             <div class="col-md-3">
-                                {{ $item->body }}
+                                {{ $search4->body }}
                             </div>
                         </div> 
                          

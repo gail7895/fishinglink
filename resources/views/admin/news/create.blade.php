@@ -7,13 +7,13 @@
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
      <div class="container">
+         <form action="{{action('Admin\NewsController@create') }}" method= "post"
+                           enctype="multipart/form-data">
           <div class="row">
               <div class="col-md-8 mx-auto">
                    <h2>貸し出す</h2>
-                   <div class="containr">
+                     <div class="containr">
                        <div class="row">
-                           <form action="{{action('Admin\NewsController@create') }}" method= "post"
-                           enctype="multipart/form-data">
                            
                            @if (count($errors) > 0)
                              <ul>
@@ -25,7 +25,7 @@
                            
                       <div class="form-group row">
                         <label class="col-md-3">貸出品</label>
-                             <input class="form-control" name="rental_Listing" value="{{ old('rental_Listing') }}"
+                             <input class="form-control" name="rental_Listing" value="{{ old('rental_Listing') }}">
                           </div>
                       </div>  
                       
@@ -52,18 +52,16 @@
                            <textarea class="form-contorl" name="body" rows="6" cols="60" placeholder="ここに貸出品の説明を記入してください。">
                            {{ old('body') }}
                            </textarea>
+                           </div>
                      </div>
-                    </div>
                     
                     @csrf
                     <input type="submit" class="btn btn-primary" value="本当に貸し出しますか？">
                      
                      
-                     </form>
                     </div>
-                   </div>
-                       
                </div>
            </div>
+         </form>
        </div>
 @endsection
