@@ -24,7 +24,7 @@
                            @endif
                            
                       <div class="form-group row">
-                        <label class="col-md-3">貸出品</label>
+                        {{ Form::label('rental_Listing', '貸出品名' ) }}
                              <input class="form-control" name="rental_Listing" value="{{ old('rental_Listing') }}">
                           </div>
                       </div>  
