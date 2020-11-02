@@ -1,3 +1,4 @@
+
 {{-- layouts/admin.blade.phpを読み込む --}}
 @extends('layouts.admin')
 
@@ -11,7 +12,7 @@
                    <h2>貸し出す</h2>
                    <div class="containr">
                        <div class="row">
-                           <form action="{{action('Admin\NewsController@create') }}" method= "post">
+                           <form action="{{action('Admin\NewsController@create') }}" method= "post"
                            enctype="multipart/form-data">
                            
                            @if (count($errors) > 0)
@@ -36,7 +37,7 @@
                       </div>
                            
                      <div class="form-group row">
-                          {{ Form::label('type_Tools', '貸出品の種類' ) }}
+                         {{ Form::label('type_Tools', '貸出品の種類' ) }}
                           {{ Form::select('type_Tools', $type_Tools ) }}
                      </div>
                             
@@ -48,12 +49,7 @@
                      <div class="form-group row">
                          <label class="col-md-2">説明</label>
                            <div class="col-md-10">
-                           <textarea class="form-contorl" name="body" rows="6" cols="60
-                           ">
-                           ここに貸出品の説明を記入してください。
-                           （例）ダイワのソルティガ４５００Hです
-                           週二日の釣行を半年ぐらい使用していましたが特にトラブルはなかったです
-                           若干ラインローラーのところに傷がありますが気になる方はご遠慮ください
+                           <textarea class="form-contorl" name="body" rows="6" cols="60" placeholder="ここに貸出品の説明を記入してください。">
                            {{ old('body') }}
                            </textarea>
                      </div>
@@ -71,5 +67,3 @@
            </div>
        </div>
 @endsection
-
-

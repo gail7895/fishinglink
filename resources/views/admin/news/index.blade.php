@@ -9,18 +9,17 @@
            </div>
               <form action="{{ action('Admin\NewsController@index') }}" method="get">
                  <div class="form-group">
-                     <label for="貸出品">貸出品</label>
                      {{ Form::label('text', '貸出品名') }}
-                     {{ Form::text('rental_Listing','',['class'  => 'form-control', '選択してください'] ) }}
+                     {{ Form::text('rental_Listing','',['class'  => 'form-control'] ) }}
                  </div>
                  
                  <div class="form-group">
                      {{ Form::label('items', '貸出品の種類') }}
-                     {{ Form::select('items', ['選択してください' => '選択してください'],compact('type_Tools') }}
+                     {{ Form::select('items', $type_Tools) }}
                  </div>
                  <div class="form-group">
                      {{ Form::label('condition', '貸出品の状態') }}
-                     {{ Form::select('condition', ['選択してください' => '選択してください'],compact('conditions') }}
+                     {{ Form::select('condition',$condition ) }}
                  </div>
                      {{ Form::submit('検索', ['class' => 'btn btn-primary']) }}
                      {{ Form::close() }}
@@ -79,3 +78,4 @@
            </div>
        </div>
    </div>
+@endsection

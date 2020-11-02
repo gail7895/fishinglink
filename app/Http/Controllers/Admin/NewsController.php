@@ -60,8 +60,8 @@ class NewsController extends Controller
             $query->where('items', $search2)->get();
         }
     
-        if ($request->has('condition') && $serach3 != ('選択してください')) {
-            $query->where('condition', $serach3)->get();
+        if ($request->has('condition') && $search3 != ('選択してください')) {
+            $query->where('condition', $search3)->get();
         }
         
         if ($request->has('body') && $search4 != '') {
@@ -71,9 +71,8 @@ class NewsController extends Controller
         //貸出品を1ページにつき10件ずつ表示
         $data = $query->paginate(10);
         
-        return view('news/index',[
-            'data' => $data
-            ]);
+        return view('admin/news/index',['data' => $data,'type_Tools' => $type_Tools,
+        'condition' => $conditions]);
             
       }   
       
