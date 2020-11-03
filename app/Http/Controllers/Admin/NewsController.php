@@ -60,8 +60,8 @@ class NewsController extends Controller
             $query->where('items', $search2)->get();
         }
     
-        if ($request->has('condition') && $search3 != ('選択してください')) {
-            $query->where('condition', $search3)->get();
+        if ($request->has('conditions') && $search3 != ('選択してください')) {
+            $query->where('conditions', $search3)->get();
         }
         
         if ($request->has('body') && $search4 != '') {
@@ -72,7 +72,7 @@ class NewsController extends Controller
         $data = $query->paginate(10);
         
         return view('admin/news/index',['data' => $data,'type_Tools' => $type_Tools,
-        'condition' => $conditions]);
+        'conditions' => $conditions]);
             
       }   
       

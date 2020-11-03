@@ -21,8 +21,8 @@
                  </div>
                  
                  <div class="form-group">
-                     {{ Form::label('condition', '貸出品の状態') }}
-                     {{ Form::select('condition',$condition ) }}
+                     {{ Form::label('conditions', '貸出品の状態') }}
+                     {{ Form::select('conditions',$conditions ) }}
                  </div>
                  
                  <div>
@@ -60,7 +60,7 @@
                                      <thead>
                                          <th>{{ $serach1->text }}</th>
                                          <th>{{ $serach2->items }}</th>
-                                         <th>{{ $serach3->condition }}</th>
+                                         <th>{{ $serach3->conditions }}</th>
                                      </thead>
                                  </div>
                              </div>
