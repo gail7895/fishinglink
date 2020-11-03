@@ -49,9 +49,7 @@
                      <div class="form-group row">
                          <label class="col-md-2">説明</label>
                            <div class="col-md-10">
-                           <textarea class="form-contorl" name="body" rows="6" cols="60" placeholder="ここに貸出品の説明を記入してください。">
-                           {{ old('body') }}
-                           </textarea>
+                           <textarea class="form-contorl" name="body" rows="6" cols="60" placeholder="ここに貸出品の説明を記入してください" ></textarea>{{ old('body') }}</textarea>
                            </div>
                      </div>
                     
