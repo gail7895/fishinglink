@@ -42,8 +42,8 @@
                      </div>
                             
                      <div class="form-group row">
-                          {{ Form::label('condition', '商品の状態') }}
-                          {{ Form::select('condition',  $conditions ) }}
+                          {{ Form::label('conditions', '商品の状態') }}
+                          {{ Form::select('conditions',  $conditions ) }}
                      </div>
                      
                      <div class="form-group row">

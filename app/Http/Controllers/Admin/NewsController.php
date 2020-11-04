@@ -46,8 +46,8 @@ class NewsController extends Controller
         $query = News::query();
         //検索時に入力した項目を取得する
         $search1 = $request->input('rental_Listing');
-        $search2 = $request->input('items');
-        $search3 = $request->input('condition');
+        $search2 = $request->input('type_Tools');
+        $search3 = $request->input('conditions');
         $search4 = $request->input('body');
         
         //貸出品入力フォームで入力した文字列を含むカラムで取得
@@ -56,8 +56,8 @@ class NewsController extends Controller
         }
             
         //プルダウンメニューで選択してください以外を選択した場合、$query->whereで選択した道具の種類と一致するカラムを取得する
-        if ($request->has('items') && $search2 != ('選択してください')) {
-            $query->where('items', $search2)->get();
+        if ($request->has('type_Tools') && $search2 != ('選択してください')) {
+            $query->where('type_Tools', $search2)->get();
         }
     
         if ($request->has('conditions') && $search3 != ('選択してください')) {
