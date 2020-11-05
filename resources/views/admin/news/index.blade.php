@@ -26,6 +26,7 @@
                  </div>
                  
                  <div>
+                     @csrf
                      {{ Form::submit('検索', ['class' => 'btn btn-primary']) }}
                  </div>
                  
@@ -42,7 +43,6 @@
                  <table class="table table-striped">
                      <thead>
                         <tr>
-                         <th width="10%">ID</th>
                          <th width="20%">貸出品名</th>
                          <th width="20%">貸出品の種類</th>
                          <th width="20%">貸出品の状態</th>
@@ -58,9 +58,9 @@
                              <div class="row">
                                  <div class="table table-striped">
                                      <thead>
-                                         <th>{{ $serach1->text }}</th>
-                                         <th>{{ $serach2->items }}</th>
-                                         <th>{{ $serach3->conditions }}</th>
+                                         <th><a href="">{{ $news->rental_Listing }}</a></th>
+                                         <th>{{ $news->type_Tools}}</th>
+                                         <th>{{ $news->conditions }}</th>
                                      </thead>
                                  </div>
                              </div>

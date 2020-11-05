@@ -72,7 +72,7 @@ class NewsController extends Controller
         $data = $query->paginate(10);
         
         return view('admin/news/index',['data' => $data,'type_Tools' => $type_Tools,
-        'conditions' => $conditions]);
+        'conditions' => $conditions,'search1' => $search1,'search2' => $search2,'search3' => $search3]);
             
       }   
       

@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('news','Admin\NewsController@index');
     
     
+    
 });
 
 
