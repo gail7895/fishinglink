@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('news/delete','Admin\NewsController@edit');
     Route::get('news/update','Admin\NewsController@update');
     Route::get('news','Admin\NewsController@index');
-    
+    Route::get('news/details','Admin\NewsController@details');
     
     
 });

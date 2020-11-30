@@ -10,8 +10,26 @@ class NewsController extends Controller
 {
     public function add()
     {
-        $type_Tools = array('ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
-        $conditions= array('非常に良い','良い','普通','悪い','非常に悪い');
+        $type_Tools = array('' => '選択してください',
+                            'rod' => 'ロッド',
+                            'reel' => 'リール',
+                            'line' => 'ライン',
+                            'rure' => 'ルアー',
+                            'hook' => 'フック',
+                            'feed' => '餌',
+                            'ice' => '氷',
+                            'coolerbox' => 'クーラーボックス',
+                            'other' => 'その他'
+                            );
+                            
+        $conditions= array('' => '選択してください',
+                           'verynice' => '非常に良い',
+                           'good' => '良い',
+                           'usually' => '普通',
+                           'bad' => '悪い',
+                           'verybad' => '非常に悪い'
+                           );
+                           
         
         return view('admin.news.create',['type_Tools' => $type_Tools,'conditions' => $conditions]);
     }
@@ -38,11 +56,29 @@ class NewsController extends Controller
         return redirect('admin/news/create');
     }
     
-    public function index(Request $request)
+   public function index(Request $request)
     {   
-        $type_Tools = array('選択してください','ロッド','リール','ライン','ルアー','フック','餌','氷','クーラーボックス','その他');
-        $conditions= array('選択してください','非常に良い','良い','普通','悪い','非常に悪い');
-        
+        $type_Tools = array('' => '選択してください',
+                            'rod' => 'ロッド',
+                            'reel' => 'リール',
+                            'line' => 'ライン',
+                            'rure' => 'ルアー',
+                            'hook' => 'フック',
+                            'feed' => '餌',
+                            'ice' => '氷',
+                            'coolerbox' => 'クーラーボックス',
+                            'other' => 'その他'
+                            );
+                            
+        $conditions= array ('' => '選択してください',
+                           'verynice' => '非常に良い',
+                           'good' => '良い',
+                           'usually' => '普通',
+                           'bad' => '悪い',
+                           'verybad' => '非常に悪い'
+                           );
+                           
+       
         $query = News::query();
         //検索時に入力した項目を取得する
         $search1 = $request->input('rental_Listing');
@@ -76,6 +112,7 @@ class NewsController extends Controller
             
       }   
       
+      
        
     public function edit(Request $request)
     {
@@ -89,6 +126,12 @@ class NewsController extends Controller
     public function update()
     {
         return redirect('admin/news/edit');
+    }
+    
+    public function  datails() 
+    {
+        //次回ここから
+        
     }
     
 }
